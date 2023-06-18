@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Lollipop Chart</title>
+  <meta charset="utf-8">
+
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+  <script src="lollipop_chart.js"></script>
+  <!-- Tooltip style -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background-color: rgb(250, 250, 239);
+    }
+    .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            z-index: 9999;
+        }
+
+    .tooltip {
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 15px;
+      min-width: 200px;
+      text-align: left;
+      color: black;
+    }
+
+    .button {
+      background-color: #4CAF50;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    h1 {
+      position: relative;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 35px;
+      text-align: center;
+    }
+
+    p {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .btn {
+      color: orange;
+    }
+
+    .btn.active {
+      /* Add your desired styles for the active button */
+      font-weight: bolder;
+      /* Example: Change background color to yellow */
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="../index.html" class="button">Back to Home page</a>
+  <h1>Relative frequency of skillsets for different jobs. </h1>
+  <center>
+    <h3>Select a Job Title:
+      <button id="businessAnalystBtn" class="btn" style="color:#6ab9d8;font-size: medium;font-weight: bold"
+        onclick="update('businessAnalystBtn','../data/skillset_ba.csv','Business Analyst','#87CEEB')" active>Business
+        Analyst</button>
+      <button id="biDevBtn" class="btn" style="color:#58bd58;font-size: medium;font-weight: bold"
+        onclick="update('biDevBtn','../data/skillset_bid.csv','Business Intelligence Developer','#90EE90')">Business
+        Intelligence Developer</button>
+      <button id="dataAnalystBtn" class="btn" style="color: #9370DB;font-size: medium;font-weight: bold"
+        onclick="update('dataAnalystBtn','../data/skillset_da.csv','Data Analyst','#9370DB')">Data Analyst</button>
+      <button id="dataEngineerBtn" class="btn" style="color:#fdbd84;font-size: medium;font-weight: bold"
+        onclick="update('dataEngineerBtn','../data/skillset_de.csv','Data Engineer','#FFDAB9')">Data Engineer</button>
+      <button id="dataScientistBtn" class="btn" style="color:#f7a0ad;font-size: medium;font-weight: bold"
+        onclick="update('dataScientistBtn','../data/skillset_ds.csv','Data Scientist','#FFB6C1')">Data
+        Scientist</button>
+      <button id="dbAdminBtn" class="btn" style="color: #f2555d;font-size: medium;font-weight: bold"
+        onclick="update('dbAdminBtn','../data/skillset_dba.csv','Database Administrator','#f2555d')">Database
+        Administrator</button>
+      <button id="mlEngineerBtn" class="btn" style="color: #dbb685;font-size: medium;font-weight: bold"
+        onclick="update('mlEngineerBtn','../data/skillset_mle.csv','Machine Learning Engineer','#D2B48C')">Machine
+        Learning
+        Engineer</button>
+
+      <br>
+
+      <div id="my_dataviz"></div>
+      <script src="lollipop.js"></script>
+  </center>
+
+</body>
+
+</html>
